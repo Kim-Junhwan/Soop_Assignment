@@ -5,4 +5,7 @@
 //  Created by JunHwan Kim on 2024/04/20.
 //
 
-import Foundation
+struct AppRatingEntity {
+    let ratingScore: Double
+    let userRatingCount: Int
+}
