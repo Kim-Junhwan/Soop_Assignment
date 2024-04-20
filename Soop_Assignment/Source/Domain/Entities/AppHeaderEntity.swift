@@ -8,4 +8,5 @@
 struct AppHeaderEntity {
     let appName: String
     let appIconImagePath: String
+    let appId: Int
 }
