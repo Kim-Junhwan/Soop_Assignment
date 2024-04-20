@@ -54,14 +54,38 @@
 		C744E98A2BD3ECA400DB6A2A /* Soop_Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */,
-				C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */,
+				C744E9A02BD3ED8600DB6A2A /* Resource */,
+				C744E99F2BD3ED8100DB6A2A /* Source */,
+			);
+			path = Soop_Assignment;
+			sourceTree = "<group>";
+		};
+		C744E99F2BD3ED8100DB6A2A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C744E9A12BD3ED9000DB6A2A /* App */,
 				C744E98F2BD3ECA400DB6A2A /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C744E9A02BD3ED8600DB6A2A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				C744E9942BD3ECA600DB6A2A /* Assets.xcassets */,
 				C744E9962BD3ECA600DB6A2A /* LaunchScreen.storyboard */,
 				C744E9992BD3ECA600DB6A2A /* Info.plist */,
 			);
-			path = Soop_Assignment;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C744E9A12BD3ED9000DB6A2A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */,
+				C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +306,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Soop_Assignment/Info.plist;
+				INFOPLIST_FILE = Soop_Assignment/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,7 +338,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Soop_Assignment/Info.plist;
+				INFOPLIST_FILE = Soop_Assignment/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
