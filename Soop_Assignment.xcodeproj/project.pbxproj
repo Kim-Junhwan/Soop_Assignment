@@ -20,6 +20,7 @@
 		C744E9B72BD3F88C00DB6A2A /* AppRatingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9B62BD3F88C00DB6A2A /* AppRatingEntity.swift */; };
 		C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9B82BD3F94600DB6A2A /* AppSubInfoEntity.swift */; };
 		C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9BA2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift */; };
+		C744E9C32BD413CB00DB6A2A /* ITunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9C22BD413CB00DB6A2A /* ITunesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		C744E9B62BD3F88C00DB6A2A /* AppRatingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingEntity.swift; sourceTree = "<group>"; };
 		C744E9B82BD3F94600DB6A2A /* AppSubInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSubInfoEntity.swift; sourceTree = "<group>"; };
 		C744E9BA2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultThumbnailEntity.swift; sourceTree = "<group>"; };
+		C744E9C22BD413CB00DB6A2A /* ITunesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		C744E9B02BD3F16100DB6A2A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C744E9BF2BD411D300DB6A2A /* Repositories */,
 				C744E9B12BD3F16900DB6A2A /* Entities */,
 			);
 			path = Domain;
@@ -132,6 +135,14 @@
 				C744E9BA2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C744E9BF2BD411D300DB6A2A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C744E9C22BD413CB00DB6A2A /* ITunesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C744E9902BD3ECA400DB6A2A /* ViewController.swift in Sources */,
+				C744E9C32BD413CB00DB6A2A /* ITunesRepository.swift in Sources */,
 				C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */,
 				C744E9B72BD3F88C00DB6A2A /* AppRatingEntity.swift in Sources */,
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,

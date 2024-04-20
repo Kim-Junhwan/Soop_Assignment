@@ -1,0 +1,12 @@
+//
+//  ITunesRepository.swift
+//  Soop_Assignment
+//
+//  Created by JunHwan Kim on 2024/04/21.
+//
+
+import RxSwift
+
+protocol ITunesRepository {
+    func fetchSearchResultList() -> Single<[SearchResultThumbnailEntity]>
+}
