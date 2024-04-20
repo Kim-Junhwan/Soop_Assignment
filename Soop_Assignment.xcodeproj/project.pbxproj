@@ -22,6 +22,7 @@
 		C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9BA2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift */; };
 		C744E9C32BD413CB00DB6A2A /* ITunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9C22BD413CB00DB6A2A /* ITunesRepository.swift */; };
 		C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9C52BD41D4600DB6A2A /* SearchQuery.swift */; };
+		C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9C72BD4254400DB6A2A /* FetchDetailInfoQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C744E9BA2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultThumbnailEntity.swift; sourceTree = "<group>"; };
 		C744E9C22BD413CB00DB6A2A /* ITunesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesRepository.swift; sourceTree = "<group>"; };
 		C744E9C52BD41D4600DB6A2A /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
+		C744E9C72BD4254400DB6A2A /* FetchDetailInfoQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C744E9C52BD41D4600DB6A2A /* SearchQuery.swift */,
+				C744E9C72BD4254400DB6A2A /* FetchDetailInfoQuery.swift */,
 			);
 			path = Query;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
+				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
 				C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
