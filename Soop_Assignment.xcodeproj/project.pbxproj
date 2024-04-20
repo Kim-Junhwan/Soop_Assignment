@@ -62,6 +62,7 @@
 		C744E98A2BD3ECA400DB6A2A /* Soop_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				C744E9AE2BD3EE7E00DB6A2A /* Secret */,
 				C744E9A02BD3ED8600DB6A2A /* Resource */,
 				C744E99F2BD3ED8100DB6A2A /* Source */,
 			);
@@ -94,6 +95,13 @@
 				C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C744E9AE2BD3EE7E00DB6A2A /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secret;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
