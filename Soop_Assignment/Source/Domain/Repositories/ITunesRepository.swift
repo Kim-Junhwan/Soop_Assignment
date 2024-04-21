@@ -8,6 +8,6 @@
 import RxSwift
 
 protocol ITunesRepository {
-    func fetchSearchResultList(query: SearchQuery) -> Single<[SearchResultThumbnailEntity]>
-    func fetchDetailInfo(query: FetchDetailInfoQuery) -> Single<DetailInfoEntity>
+    func fetchSearchResultList(query: SearchQuery, completion: @escaping (Result<[SearchResultThumbnailEntity], Error>) -> Void)
+    func fetchDetailInfo(query: FetchDetailInfoQuery, completion: @escaping (DetailInfoEntity) -> Void)
 }
