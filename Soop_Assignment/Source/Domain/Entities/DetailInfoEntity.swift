@@ -10,4 +10,5 @@ struct DetailInfoEntity {
     let ratingInfo: AppRatingEntity
     let subInfo: AppSubInfoEntity
     let releaseInfo: AppReleaseEntity
+    let descriptionInfo: AppDescriptionEntity
 }
