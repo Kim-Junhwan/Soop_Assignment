@@ -26,6 +26,7 @@
 		C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9CB2BD42BDA00DB6A2A /* DetailInfoEntity.swift */; };
 		C744E9D02BD4349700DB6A2A /* AppReleaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9CF2BD4349700DB6A2A /* AppReleaseEntity.swift */; };
 		C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D12BD4B82200DB6A2A /* AppDescriptionEntity.swift */; };
+		C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		C744E9CB2BD42BDA00DB6A2A /* DetailInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoEntity.swift; sourceTree = "<group>"; };
 		C744E9CF2BD4349700DB6A2A /* AppReleaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReleaseEntity.swift; sourceTree = "<group>"; };
 		C744E9D12BD4B82200DB6A2A /* AppDescriptionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionEntity.swift; sourceTree = "<group>"; };
+		C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		C744E9B02BD3F16100DB6A2A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C744E9D32BD4C17E00DB6A2A /* UseCases */,
 				C744E9BF2BD411D300DB6A2A /* Repositories */,
 				C744E9B12BD3F16900DB6A2A /* Entities */,
 			);
@@ -166,6 +169,14 @@
 				C744E9C72BD4254400DB6A2A /* FetchDetailInfoQuery.swift */,
 			);
 			path = Query;
+			sourceTree = "<group>";
+		};
+		C744E9D32BD4C17E00DB6A2A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
 				C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */,
+				C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
