@@ -9,4 +9,5 @@ import RxSwift
 
 protocol ITunesRepository {
     func fetchSearchResultList(query: SearchQuery) -> Single<[SearchResultThumbnailEntity]>
+    func fetchDetailInfo(query: FetchDetailInfoQuery) -> Single<DetailInfoEntity>
 }
