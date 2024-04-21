@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */; };
 		C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */; };
-		C744E9902BD3ECA400DB6A2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98F2BD3ECA400DB6A2A /* ViewController.swift */; };
 		C744E9952BD3ECA600DB6A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C744E9942BD3ECA600DB6A2A /* Assets.xcassets */; };
 		C744E9982BD3ECA600DB6A2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C744E9962BD3ECA600DB6A2A /* LaunchScreen.storyboard */; };
 		C744E9A42BD3EDEC00DB6A2A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C744E9A32BD3EDEC00DB6A2A /* SnapKit */; };
@@ -35,7 +34,6 @@
 		C744E9882BD3ECA400DB6A2A /* Soop_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soop_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C744E98F2BD3ECA400DB6A2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C744E9942BD3ECA600DB6A2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C744E9972BD3ECA600DB6A2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C744E9992BD3ECA600DB6A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +97,10 @@
 		C744E99F2BD3ED8100DB6A2A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C744E9EF2BD5540100DB6A2A /* Presentation */,
 				C744E9D62BD4DD8C00DB6A2A /* Common */,
 				C744E9B02BD3F16100DB6A2A /* Domain */,
 				C744E9A12BD3ED9000DB6A2A /* App */,
-				C744E98F2BD3ECA400DB6A2A /* ViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -193,6 +191,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C744E9EF2BD5540100DB6A2A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,7 +280,6 @@
 			files = (
 				C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */,
 				C744E9D02BD4349700DB6A2A /* AppReleaseEntity.swift in Sources */,
-				C744E9902BD3ECA400DB6A2A /* ViewController.swift in Sources */,
 				C744E9C32BD413CB00DB6A2A /* ITunesRepository.swift in Sources */,
 				C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */,
 				C744E9B72BD3F88C00DB6A2A /* AppRatingEntity.swift in Sources */,
