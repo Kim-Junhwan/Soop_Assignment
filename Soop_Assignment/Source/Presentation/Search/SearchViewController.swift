@@ -8,21 +8,35 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    enum Word {
+        static let navigationTitle = "검색"
+    }
+    
+    private let searchController: UISearchController = .init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureView()
+        setConstraints()
+    }
+
+    private func configureView() {
+        setNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setNavigationBar() {
+        navigationItem.title = Word.navigationTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        navigationItem.searchController?.searchBar.delegate = self
     }
-    */
+    
+    private func setConstraints() {
+        
+    }
+}
 
+extension SearchViewController: UISearchBarDelegate {
+    
 }
