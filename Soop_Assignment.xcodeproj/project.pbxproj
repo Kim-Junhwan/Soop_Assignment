@@ -30,6 +30,7 @@
 		C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */; };
 		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
 		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
+		C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
 		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
+		C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */,
+				C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */,
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
+				C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
 				C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */,
