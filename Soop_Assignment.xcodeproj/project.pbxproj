@@ -29,6 +29,7 @@
 		C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */; };
 		C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */; };
 		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
+		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
+		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C744E99F2BD3ED8100DB6A2A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C744E9DC2BD4EA1E00DB6A2A /* Network */,
 				C744E9D62BD4DD8C00DB6A2A /* Common */,
 				C744E9B02BD3F16100DB6A2A /* Domain */,
 				C744E9A12BD3ED9000DB6A2A /* App */,
@@ -193,6 +196,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C744E9DC2BD4EA1E00DB6A2A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,6 +295,7 @@
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
+				C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */,
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
