@@ -28,6 +28,7 @@
 		C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D12BD4B82200DB6A2A /* AppDescriptionEntity.swift */; };
 		C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */; };
 		C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */; };
+		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		C744E9D12BD4B82200DB6A2A /* AppDescriptionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionEntity.swift; sourceTree = "<group>"; };
 		C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				C744E9D42BD4C2C400DB6A2A /* SearchUsecase.swift */,
+				C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */,
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
+				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
