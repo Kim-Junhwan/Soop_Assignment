@@ -14,15 +14,20 @@ class SearchViewController: UIViewController {
     }
     
     private let searchController: UISearchController = .init()
+    private let searchView: SearchView = .init(frame: .zero)
+    
+    override func loadView() {
+        view = searchView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        setConstraints()
     }
 
     private func configureView() {
         setNavigationBar()
+        view.backgroundColor = .systemBackground
     }
     
     private func setNavigationBar() {
@@ -30,10 +35,6 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-    }
-    
-    private func setConstraints() {
-        
     }
 }
 
