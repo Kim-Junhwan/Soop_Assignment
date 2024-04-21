@@ -32,6 +32,7 @@
 		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
 		C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */; };
 		C744E9EA2BD541EA00DB6A2A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9E92BD541EA00DB6A2A /* Session.swift */; };
+		C744E9EE2BD5477300DB6A2A /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
 		C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		C744E9E92BD541EA00DB6A2A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */,
 				C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */,
 				C744E9E92BD541EA00DB6A2A /* Session.swift */,
+				C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
 				C744E9EA2BD541EA00DB6A2A /* Session.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
+				C744E9EE2BD5477300DB6A2A /* RequestAdapter.swift in Sources */,
 				C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */,
 				C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */,
 			);

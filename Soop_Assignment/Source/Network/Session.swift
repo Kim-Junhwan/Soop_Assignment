@@ -9,9 +9,11 @@ import Foundation
 
 class Session {
     let urlSession: URLSession
+    let adapters: [RequestAdapter]
     
-    init(urlSession: URLSession) {
+    init(urlSession: URLSession, adapters: [RequestAdapter]) {
         self.urlSession = urlSession
+        self.adapters = adapters
     }
     
     func request(converter: URLRequestConvertable) -> DataRequest {
