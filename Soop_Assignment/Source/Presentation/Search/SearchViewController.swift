@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 class SearchViewController: UIViewController {
     
@@ -34,10 +35,5 @@ class SearchViewController: UIViewController {
         navigationItem.title = Word.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.delegate = self
     }
-}
-
-extension SearchViewController: UISearchBarDelegate {
-    
 }
