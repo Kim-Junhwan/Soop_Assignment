@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -57,10 +57,8 @@ class SearchViewController: UIViewController {
         
         let input = SearchViewModel.Input(search: searchSignal)
         let output = viewModel.transform(input: input)
-        output.searchResult
-            .emit(with: self) { owner, result in
-                print(result)
-            }
-            .disposed(by: disposeBag)
+        output.searchResult.asObservable().bind(to: searchView.searchResultCollectionView.rx.items(cellIdentifier: SearchResultCollectionViewCell.identifier, cellType: SearchResultCollectionViewCell.self)) { index, element, cell in
+        }
+        .disposed(by: disposeBag)
     }
 }
