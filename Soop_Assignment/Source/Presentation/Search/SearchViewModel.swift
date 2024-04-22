@@ -16,12 +16,13 @@ final class SearchViewModel: ViewModelBase {
     }
     
     struct Output {
-        let searchResult: Signal<String>
+        let searchResult: Signal<[SearchThumbnailModel]>
         let isLoading: Signal<Bool>
     }
     
     private let searchUsecase: SearchUsecase
     private let isLoading: PublishRelay<Bool> = .init()
+    private let searchResults: PublishRelay<[SearchThumbnailModel]> = .init()
     var disposeBag: DisposeBag = .init()
     
     init(searchUsecase: SearchUsecase) {
@@ -36,11 +37,15 @@ final class SearchViewModel: ViewModelBase {
             .flatMap { word in
                 self.searchUsecase.excute(word: word, offset: 0).asSignal(onErrorJustReturn: [])
             }
-            .do { _ in
+            .map { result in
+                result.map { SearchThumbnailModel(thumbnailEntity: $0) }
+            }
+            .do { results in
+                self.searchResults.accept(results)
                 self.isLoading.accept(false)
             }
             
         
-        return .init(searchResult: <#T##Signal<String>#>, isLoading: isLoading.asSignal())
+        return .init(searchResult: searchResult, isLoading: isLoading.asSignal())
     }
 }
