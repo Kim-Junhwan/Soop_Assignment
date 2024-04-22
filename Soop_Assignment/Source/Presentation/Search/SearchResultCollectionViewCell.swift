@@ -10,15 +10,24 @@ import UIKit
 class SearchResultCollectionViewCell: UICollectionViewCell {
     static let identifier = "SearchResultCollectionViewCell"
     
+    private enum Metric {
+        static let subTextFontSize: CGFloat = 13
+        static let appThumbnailStackViewSpacing: CGFloat = 10
+    }
+    
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
+        stackView.alignment = .center
+        stackView.spacing = 15
         stackView.addArrangedSubview(headerStackView)
         stackView.addArrangedSubview(middleStackView)
+        stackView.addArrangedSubview(appThumbnailStackView)
         return stackView
     }()
     
+    //MARK: - header
     private lazy var headerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -57,10 +66,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private let appGenreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: Metric.subTextFontSize)
          return label
     }()
     
+    //MARK: - middle
     private lazy var middleStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -88,7 +98,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private let ratingCountLabel: UILabel = {
        let label = UILabel()
         label.textColor = .gray
-        label.font = .boldSystemFont(ofSize: 13)
+        label.font = .boldSystemFont(ofSize: Metric.subTextFontSize)
         return label
     }()
     
@@ -110,14 +120,27 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private let developerNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = .boldSystemFont(ofSize: 13)
+        label.font = .boldSystemFont(ofSize: Metric.subTextFontSize)
         return label
     }()
+    
+    //MARK: - bottom
+    private let appThumbnailStackView: UIStackView = {
+       let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = Metric.appThumbnailStackViewSpacing
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+    
+    private var appThumbnailImageViewList: [UIImageView] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
         setConstraints()
+        configureThumbnailImageView()
     }
     
     required init?(coder: NSCoder) {
@@ -153,6 +176,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         ratingStarView.ratingScore = model.ratingScore
         ratingCountLabel.text = countCutting(model.userRatingCount)
         developerNameLabel.text = model.developerName
+        setThumbnailImageView(imageList: model.appThumbnailImagePath)
     }
     
     private func countCutting(_ count: Int) -> String {
@@ -165,5 +189,39 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
             let cuttingNum = Double(count)/10000
             return String(format:"%.1f만", cuttingNum)
         }
+    }
+    
+    private func configureThumbnailImageView() {
+        for _ in 0..<3 {
+            let imageView = UIImageView()
+            imageView.backgroundColor = .orange
+            appThumbnailStackView.addArrangedSubview(imageView)
+            appThumbnailImageViewList.append(imageView)
+            setThumbnailImageViewConstraints(imageView)
+        }
+    }
+    
+    private func setThumbnailImageView(imageList: [String]) {
+        let imageArr: [String]
+        if imageList.count > 3 {
+            imageArr = Array(imageList[0..<3])
+        } else {
+            imageArr = imageList
+        }
+        for i in 0..<3-imageArr.count {
+            appThumbnailImageViewList[2-i].isHidden = true
+        }
+    }
+    
+    private func setThumbnailImageViewConstraints(_ imageView: UIImageView) {
+        let width = (bounds.width - 2*Metric.appThumbnailStackViewSpacing)/3
+        imageView.snp.makeConstraints { make in
+            make.width.equalTo(width)
+            make.height.equalTo(width * 1.5)
+        }
+    }
+    
+    override func prepareForReuse() {
+        appThumbnailImageViewList.forEach { $0.isHidden = false }
     }
 }
