@@ -30,9 +30,9 @@ final class SearchViewModel: ViewModelBase {
     }
     
     func transform(input: Input) -> Output {
-        let searchResult = input.search
-            .do(onNext: { _ in
-                self.isLoading.accept(true)
+        input.search
+            .do(onNext: { [weak self] _ in
+                self?.isLoading.accept(true)
             })
             .flatMap { word in
                 self.searchUsecase.excute(word: word, offset: 0).asSignal(onErrorJustReturn: [])
@@ -40,12 +40,13 @@ final class SearchViewModel: ViewModelBase {
             .map { result in
                 result.map { SearchThumbnailModel(thumbnailEntity: $0) }
             }
-            .do { results in
-                self.searchResults.accept(results)
-                self.isLoading.accept(false)
+            .emit(with: self) { owner, result in
+                owner.isLoading.accept(false)
+                owner.searchResults.accept(result)
             }
+            .disposed(by: disposeBag)
             
         
-        return .init(searchResult: searchResult, isLoading: isLoading.asSignal())
+        return .init(searchResult: searchResults.asSignal(), isLoading: isLoading.asSignal())
     }
 }
