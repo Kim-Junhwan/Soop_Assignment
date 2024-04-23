@@ -58,6 +58,7 @@ class SearchViewController: UIViewController {
         let input = SearchViewModel.Input(search: searchSignal)
         let output = viewModel.transform(input: input)
         output.searchResult.asObservable().bind(to: searchView.searchResultCollectionView.rx.items(cellIdentifier: SearchResultCollectionViewCell.identifier, cellType: SearchResultCollectionViewCell.self)) { index, element, cell in
+            cell.configureCell(element)
         }
         .disposed(by: disposeBag)
     }
