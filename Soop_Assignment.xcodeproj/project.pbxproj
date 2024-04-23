@@ -42,9 +42,6 @@
 		C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */; };
 		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
 		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
-		C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */; };
-		C744E9EA2BD541EA00DB6A2A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9E92BD541EA00DB6A2A /* Session.swift */; };
-		C744E9EE2BD5477300DB6A2A /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,9 +79,6 @@
 		C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
 		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
-		C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
-		C744E9E92BD541EA00DB6A2A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,9 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */,
-				C744E9E72BD53C4C00DB6A2A /* DataRequest.swift */,
-				C744E9E92BD541EA00DB6A2A /* Session.swift */,
-				C744E9ED2BD5477300DB6A2A /* RequestAdapter.swift */,
 				C722730D2BD7FC1D00B0DBF9 /* NetworkService.swift */,
 				C722730F2BD801BE00B0DBF9 /* DataTransferService.swift */,
 				C72273212BD80CB300B0DBF9 /* HTTPMethod.swift */,
@@ -379,7 +370,6 @@
 				C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */,
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
-				C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */,
 				C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C72273132BD8054400B0DBF9 /* DefaultITunesRepository.swift in Sources */,
@@ -389,11 +379,9 @@
 				C722731C2BD809A000B0DBF9 /* SearchRequestDTO.swift in Sources */,
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
-				C744E9EA2BD541EA00DB6A2A /* Session.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
 				C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */,
 				C72273102BD801BE00B0DBF9 /* DataTransferService.swift in Sources */,
-				C744E9EE2BD5477300DB6A2A /* RequestAdapter.swift in Sources */,
 				C722732C2BD837EE00B0DBF9 /* String+.swift in Sources */,
 				C72273242BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift in Sources */,
 				C72273222BD80CB300B0DBF9 /* HTTPMethod.swift in Sources */,
