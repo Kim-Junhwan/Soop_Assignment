@@ -17,6 +17,8 @@
 		C72273242BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273232BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift */; };
 		C72273272BD8192200B0DBF9 /* SearchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273262BD8192200B0DBF9 /* SearchResponseDTO.swift */; };
 		C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273282BD8269500B0DBF9 /* DetailResponseDTO.swift */; };
+		C722732C2BD837EE00B0DBF9 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722732B2BD837EE00B0DBF9 /* String+.swift */; };
+		C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722732E2BD83C5700B0DBF9 /* ITunesAPIError.swift */; };
 		C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */; };
 		C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */; };
 		C744E9902BD3ECA400DB6A2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98F2BD3ECA400DB6A2A /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 		C72273232BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoRequestDTO.swift; sourceTree = "<group>"; };
 		C72273262BD8192200B0DBF9 /* SearchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseDTO.swift; sourceTree = "<group>"; };
 		C72273282BD8269500B0DBF9 /* DetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponseDTO.swift; sourceTree = "<group>"; };
+		C722732B2BD837EE00B0DBF9 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		C722732E2BD83C5700B0DBF9 /* ITunesAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPIError.swift; sourceTree = "<group>"; };
 		C744E9882BD3ECA400DB6A2A /* Soop_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soop_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		C72273112BD8051100B0DBF9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C722732D2BD83C4600B0DBF9 /* Error */,
 				C72273252BD8191400B0DBF9 /* ResponseDTO */,
 				C722731A2BD8099200B0DBF9 /* RequestDTO */,
 				C72273122BD8054400B0DBF9 /* DefaultITunesRepository.swift */,
@@ -126,6 +131,22 @@
 				C72273282BD8269500B0DBF9 /* DetailResponseDTO.swift */,
 			);
 			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		C722732A2BD8373100B0DBF9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C722732B2BD837EE00B0DBF9 /* String+.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C722732D2BD83C4600B0DBF9 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C722732E2BD83C5700B0DBF9 /* ITunesAPIError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C744E97F2BD3ECA400DB6A2A = {
@@ -157,6 +178,7 @@
 		C744E99F2BD3ED8100DB6A2A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C722732A2BD8373100B0DBF9 /* Utils */,
 				C72273112BD8051100B0DBF9 /* Data */,
 				C744E9DC2BD4EA1E00DB6A2A /* Network */,
 				C744E9D62BD4DD8C00DB6A2A /* Common */,
@@ -358,6 +380,7 @@
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
 				C744E9E82BD53C4C00DB6A2A /* DataRequest.swift in Sources */,
+				C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C72273132BD8054400B0DBF9 /* DefaultITunesRepository.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
@@ -371,6 +394,7 @@
 				C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */,
 				C72273102BD801BE00B0DBF9 /* DataTransferService.swift in Sources */,
 				C744E9EE2BD5477300DB6A2A /* RequestAdapter.swift in Sources */,
+				C722732C2BD837EE00B0DBF9 /* String+.swift in Sources */,
 				C72273242BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift in Sources */,
 				C72273222BD80CB300B0DBF9 /* HTTPMethod.swift in Sources */,
 				C72273192BD808E000B0DBF9 /* Rule.swift in Sources */,
