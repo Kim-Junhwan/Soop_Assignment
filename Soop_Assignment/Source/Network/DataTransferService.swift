@@ -22,8 +22,8 @@ final class DataTransferService {
         self.networkService = networkService
     }
     
-    func request<T: Decodable> (endPoint: URLRequestConvertable, completion: @escaping (Result<T, Error>)-> Void) {
-        networkService.request(endPoint: endPoint) { result in
+    func request<T: Decodable> (endPoint: URLRequestConvertable, completion: @escaping (Result<T, Error>)-> Void) -> Cancellable? {
+        return networkService.request(endPoint: endPoint) { result in
             switch result {
             case .success(let data):
                 completion(self.decode(data: data))
