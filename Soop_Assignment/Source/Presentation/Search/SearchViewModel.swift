@@ -33,7 +33,7 @@ final class SearchViewModel: ViewModelBase {
     }
     
     func transform(input: Input) -> Output {
-        let searchResult = input.search
+        let searchButtonClick = input.search
             .do(onNext: { [weak self] _ in
                 self?.isLoading.accept(true)
             })
@@ -50,13 +50,13 @@ final class SearchViewModel: ViewModelBase {
             .do(onNext: { [weak self] _ in
                 self?.isLoading.accept(false)
             })
-            
-        input.tapCancelButton
-            .subscribe(with: self) { owner, _ in
-                owner.searchResults.accept([])
+        let tapCancelButton = input.tapCancelButton
+            .map { ()-> [SearchThumbnailModel] in
+                return []
             }
-            .disposed(by: disposeBag)
         
-        return .init(searchResult: searchResult.asSignal(), isLoading: isLoading.asSignal(), currentError: currentError.asSignal())
+        let searchResult = Signal<[SearchThumbnailModel]>.merge(searchButtonClick.asSignal(), tapCancelButton.asSignal(onErrorJustReturn: []))
+        
+        return .init(searchResult: searchResult, isLoading: isLoading.asSignal(), currentError: currentError.asSignal())
     }
 }
