@@ -26,9 +26,7 @@ struct SearchResponseItem: Decodable {
     let primaryGenreName: String
     let trackContentRating: String
     let description: String
-    let price: Double
     let sellerName: String
-    let formattedPrice: String
     let userRatingCount: Int
     let averageUserRating: Double
     let artworkUrl512: String
