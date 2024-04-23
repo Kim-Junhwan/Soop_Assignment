@@ -9,4 +9,6 @@ import Foundation
 
 struct FetchDetailInfoRequestDTO: Encodable {
     let id: Int
+    let language: String = Rule.language
+    let country: String = Rule.country
 }
