@@ -32,7 +32,7 @@ extension DefaultFetchDetailInfoUsecase: FetchDetailInfoUsecase {
                 }
             }
             return Disposables.create {
-                task.cancel()
+                task?.cancel()
             }
         }
     }

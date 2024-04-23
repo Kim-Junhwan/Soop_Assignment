@@ -33,7 +33,7 @@ extension DefaultSearchUsecase: SearchUsecase {
                 }
             }
             return Disposables.create {
-                task.cancel()
+                task?.cancel()
             }
         }
     }
