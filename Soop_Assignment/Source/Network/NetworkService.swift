@@ -18,14 +18,14 @@ enum NetworkServiceError: Error {
 }
 
 protocol NetworkService {
-    func request(endPoint: URLRequestConvertable ,completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
+    func request(endPoint: URLRequestConvertable ,completion: @escaping (Result<Data?, NetworkServiceError>) -> Void) -> Cancellable?
 }
 
-final class DefaultNetworkService {
-    func request(endPoint: URLRequestConvertable ,completion: @escaping (Result<Data?, NetworkServiceError>) -> Void) {
+final class DefaultNetworkService: NetworkService {
+    func request(endPoint: URLRequestConvertable ,completion: @escaping (Result<Data?, NetworkServiceError>) -> Void) -> Cancellable? {
         do {
             let request = try endPoint.makeURLRequest()
-            URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     completion(.failure(.networkError(error: error)))
                 } else {
@@ -38,9 +38,16 @@ final class DefaultNetworkService {
                     }
                     
                 }
-            }.resume()
+            }
+            task.resume()
+            return task
         } catch {
             completion(.failure(.url))
+            return nil
         }
     }
+}
+
+extension URLSessionTask: Cancellable {
+    
 }
