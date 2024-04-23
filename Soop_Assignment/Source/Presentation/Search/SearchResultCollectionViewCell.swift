@@ -18,7 +18,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 15
         stackView.addArrangedSubview(headerStackView)
@@ -217,7 +217,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         let width = (bounds.width - 2*Metric.appThumbnailStackViewSpacing)/3
         imageView.snp.makeConstraints { make in
             make.width.equalTo(width)
-            make.height.equalTo(width * 1.5)
         }
     }
     
