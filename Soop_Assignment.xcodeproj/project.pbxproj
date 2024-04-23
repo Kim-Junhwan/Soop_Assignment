@@ -19,6 +19,16 @@
 		C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273282BD8269500B0DBF9 /* DetailResponseDTO.swift */; };
 		C722732C2BD837EE00B0DBF9 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722732B2BD837EE00B0DBF9 /* String+.swift */; };
 		C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722732E2BD83C5700B0DBF9 /* ITunesAPIError.swift */; };
+		C722733F2BD8488100B0DBF9 /* RatingStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273322BD8488100B0DBF9 /* RatingStarView.swift */; };
+		C72273402BD8488100B0DBF9 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273332BD8488100B0DBF9 /* ViewModelBase.swift */; };
+		C72273412BD8488100B0DBF9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273352BD8488100B0DBF9 /* SearchViewController.swift */; };
+		C72273422BD8488100B0DBF9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273362BD8488100B0DBF9 /* SearchView.swift */; };
+		C72273432BD8488100B0DBF9 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273372BD8488100B0DBF9 /* SearchResultCollectionViewCell.swift */; };
+		C72273442BD8488100B0DBF9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72273382BD8488100B0DBF9 /* SearchViewModel.swift */; };
+		C72273452BD8488100B0DBF9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733A2BD8488100B0DBF9 /* DetailView.swift */; };
+		C72273462BD8488100B0DBF9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733B2BD8488100B0DBF9 /* DetailViewController.swift */; };
+		C72273472BD8488100B0DBF9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */; };
+		C72273482BD8488100B0DBF9 /* SearchThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733E2BD8488100B0DBF9 /* SearchThumbnailModel.swift */; };
 		C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */; };
 		C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */; };
 		C744E9952BD3ECA600DB6A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C744E9942BD3ECA600DB6A2A /* Assets.xcassets */; };
@@ -56,6 +66,16 @@
 		C72273282BD8269500B0DBF9 /* DetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponseDTO.swift; sourceTree = "<group>"; };
 		C722732B2BD837EE00B0DBF9 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C722732E2BD83C5700B0DBF9 /* ITunesAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPIError.swift; sourceTree = "<group>"; };
+		C72273322BD8488100B0DBF9 /* RatingStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStarView.swift; sourceTree = "<group>"; };
+		C72273332BD8488100B0DBF9 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
+		C72273352BD8488100B0DBF9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C72273362BD8488100B0DBF9 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		C72273372BD8488100B0DBF9 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		C72273382BD8488100B0DBF9 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C722733A2BD8488100B0DBF9 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C722733B2BD8488100B0DBF9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		C722733E2BD8488100B0DBF9 /* SearchThumbnailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchThumbnailModel.swift; sourceTree = "<group>"; };
 		C744E9882BD3ECA400DB6A2A /* Soop_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soop_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +161,55 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		C72273302BD8488100B0DBF9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C72273312BD8488100B0DBF9 /* CommonView */,
+				C72273332BD8488100B0DBF9 /* ViewModelBase.swift */,
+				C72273342BD8488100B0DBF9 /* Search */,
+				C72273392BD8488100B0DBF9 /* Detail */,
+				C722733D2BD8488100B0DBF9 /* Model */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C72273312BD8488100B0DBF9 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				C72273322BD8488100B0DBF9 /* RatingStarView.swift */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		C72273342BD8488100B0DBF9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C72273352BD8488100B0DBF9 /* SearchViewController.swift */,
+				C72273362BD8488100B0DBF9 /* SearchView.swift */,
+				C72273372BD8488100B0DBF9 /* SearchResultCollectionViewCell.swift */,
+				C72273382BD8488100B0DBF9 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C72273392BD8488100B0DBF9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C722733A2BD8488100B0DBF9 /* DetailView.swift */,
+				C722733B2BD8488100B0DBF9 /* DetailViewController.swift */,
+				C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C722733D2BD8488100B0DBF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C722733E2BD8488100B0DBF9 /* SearchThumbnailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C744E97F2BD3ECA400DB6A2A = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +244,7 @@
 				C744E9DC2BD4EA1E00DB6A2A /* Network */,
 				C744E9D62BD4DD8C00DB6A2A /* Common */,
 				C744E9B02BD3F16100DB6A2A /* Domain */,
+				C72273302BD8488100B0DBF9 /* Presentation */,
 				C744E9A12BD3ED9000DB6A2A /* App */,
 			);
 			path = Source;
@@ -359,21 +429,21 @@
 			files = (
 				C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */,
 				C744E9D02BD4349700DB6A2A /* AppReleaseEntity.swift in Sources */,
-				C715F1DF2BD779CB00DEABC1 /* DetailViewController.swift in Sources */,
+				C72273482BD8488100B0DBF9 /* SearchThumbnailModel.swift in Sources */,
 				C744E9C32BD413CB00DB6A2A /* ITunesRepository.swift in Sources */,
+				C72273452BD8488100B0DBF9 /* DetailView.swift in Sources */,
 				C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */,
-				C744EA032BD6050900DB6A2A /* SearchResultCollectionViewCell.swift in Sources */,
-				C744EA012BD5F47C00DB6A2A /* SearchThumbnailModel.swift in Sources */,
-				C715F1E12BD77AFA00DEABC1 /* DetailViewModel.swift in Sources */,
-				C715F1E52BD77E9B00DEABC1 /* DetailView.swift in Sources */,
-				C744E9FE2BD56CA800DB6A2A /* SearchViewModel.swift in Sources */,
 				C744E9B72BD3F88C00DB6A2A /* AppRatingEntity.swift in Sources */,
+				C72273402BD8488100B0DBF9 /* ViewModelBase.swift in Sources */,
 				C722731E2BD80A5400B0DBF9 /* ITunesRouter.swift in Sources */,
+				C72273412BD8488100B0DBF9 /* SearchViewController.swift in Sources */,
 				C744E9D22BD4B82200DB6A2A /* AppDescriptionEntity.swift in Sources */,
-				C744E9F82BD55FC800DB6A2A /* SearchView.swift in Sources */,
 				C744E9BB2BD3FBD200DB6A2A /* SearchResultThumbnailEntity.swift in Sources */,
+				C72273432BD8488100B0DBF9 /* SearchResultCollectionViewCell.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
+				C722733F2BD8488100B0DBF9 /* RatingStarView.swift in Sources */,
 				C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */,
+				C72273442BD8488100B0DBF9 /* SearchViewModel.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C72273132BD8054400B0DBF9 /* DefaultITunesRepository.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
@@ -383,12 +453,15 @@
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
+				C72273472BD8488100B0DBF9 /* DetailViewModel.swift in Sources */,
 				C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */,
 				C72273102BD801BE00B0DBF9 /* DataTransferService.swift in Sources */,
+				C72273462BD8488100B0DBF9 /* DetailViewController.swift in Sources */,
 				C722732C2BD837EE00B0DBF9 /* String+.swift in Sources */,
 				C72273242BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift in Sources */,
 				C72273222BD80CB300B0DBF9 /* HTTPMethod.swift in Sources */,
 				C72273192BD808E000B0DBF9 /* Rule.swift in Sources */,
+				C72273422BD8488100B0DBF9 /* SearchView.swift in Sources */,
 				C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */,
 				C72273272BD8192200B0DBF9 /* SearchResponseDTO.swift in Sources */,
 				C744E9D52BD4C2C400DB6A2A /* SearchUsecase.swift in Sources */,
