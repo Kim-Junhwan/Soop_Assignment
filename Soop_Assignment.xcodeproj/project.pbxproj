@@ -29,6 +29,9 @@
 		C72273462BD8488100B0DBF9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733B2BD8488100B0DBF9 /* DetailViewController.swift */; };
 		C72273472BD8488100B0DBF9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */; };
 		C72273482BD8488100B0DBF9 /* SearchThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722733E2BD8488100B0DBF9 /* SearchThumbnailModel.swift */; };
+		C722734B2BD84D9100B0DBF9 /* NetworkDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722734A2BD84D9100B0DBF9 /* NetworkDIContainer.swift */; };
+		C722734D2BD8506200B0DBF9 /* SceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722734C2BD8506200B0DBF9 /* SceneDIContainer.swift */; };
+		C722734F2BD8518000B0DBF9 /* DomainDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722734E2BD8518000B0DBF9 /* DomainDIContainer.swift */; };
 		C744E98C2BD3ECA400DB6A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */; };
 		C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */; };
 		C744E9952BD3ECA600DB6A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C744E9942BD3ECA600DB6A2A /* Assets.xcassets */; };
@@ -76,6 +79,9 @@
 		C722733B2BD8488100B0DBF9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		C722733E2BD8488100B0DBF9 /* SearchThumbnailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchThumbnailModel.swift; sourceTree = "<group>"; };
+		C722734A2BD84D9100B0DBF9 /* NetworkDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDIContainer.swift; sourceTree = "<group>"; };
+		C722734C2BD8506200B0DBF9 /* SceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDIContainer.swift; sourceTree = "<group>"; };
+		C722734E2BD8518000B0DBF9 /* DomainDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainDIContainer.swift; sourceTree = "<group>"; };
 		C744E9882BD3ECA400DB6A2A /* Soop_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soop_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +216,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C72273492BD84D6400B0DBF9 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C722734A2BD84D9100B0DBF9 /* NetworkDIContainer.swift */,
+				C722734C2BD8506200B0DBF9 /* SceneDIContainer.swift */,
+				C722734E2BD8518000B0DBF9 /* DomainDIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		C744E97F2BD3ECA400DB6A2A = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +279,7 @@
 		C744E9A12BD3ED9000DB6A2A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C72273492BD84D6400B0DBF9 /* DI */,
 				C744E98B2BD3ECA400DB6A2A /* AppDelegate.swift */,
 				C744E98D2BD3ECA400DB6A2A /* SceneDelegate.swift */,
 			);
@@ -443,12 +460,15 @@
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
 				C722733F2BD8488100B0DBF9 /* RatingStarView.swift in Sources */,
 				C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */,
+				C722734F2BD8518000B0DBF9 /* DomainDIContainer.swift in Sources */,
+				C722734B2BD84D9100B0DBF9 /* NetworkDIContainer.swift in Sources */,
 				C72273442BD8488100B0DBF9 /* SearchViewModel.swift in Sources */,
 				C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */,
 				C72273132BD8054400B0DBF9 /* DefaultITunesRepository.swift in Sources */,
 				C744E9CC2BD42BDA00DB6A2A /* DetailInfoEntity.swift in Sources */,
 				C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */,
 				C722730E2BD7FC1D00B0DBF9 /* NetworkService.swift in Sources */,
+				C722734D2BD8506200B0DBF9 /* SceneDIContainer.swift in Sources */,
 				C722731C2BD809A000B0DBF9 /* SearchRequestDTO.swift in Sources */,
 				C744E9B32BD3F39900DB6A2A /* AppHeaderEntity.swift in Sources */,
 				C744E9B92BD3F94600DB6A2A /* AppSubInfoEntity.swift in Sources */,
