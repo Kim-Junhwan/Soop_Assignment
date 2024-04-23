@@ -61,5 +61,14 @@ class SearchViewController: UIViewController {
             cell.configureCell(element)
         }
         .disposed(by: disposeBag)
+        
+        output.isLoading.emit(with: self) { owner, isLoading in
+            if isLoading {
+                LoadingView.show()
+            } else {
+                LoadingView.hide()
+            }
+        }
+        .disposed(by: disposeBag)
     }
 }
