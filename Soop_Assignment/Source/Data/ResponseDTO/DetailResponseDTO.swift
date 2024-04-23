@@ -8,43 +8,36 @@
 import Foundation
 
 struct DetailResponseDTO: Decodable {
-    let screenshotUrls: [String]
-    let artworkUrl512, artworkUrl100: String
-    let artistViewURL: String
-    let advisories: [String]
-    let kind: String
-    let averageUserRating: Double
-    let formattedPrice, minimumOSVersion, trackCensoredName: String
-    let fileSizeBytes, contentAdvisoryRating: String
-    let trackContentRating: String
-    let currentVersionReleaseDate: String
-    let releaseNotes, resultDescription: String
-    let primaryGenreName: String
-    let trackID: Int
-    let trackName, sellerName, currency: String
-    let isVppDeviceBasedLicensingEnabled: Bool
-    let artistName: String
-    let genres: [String]
-    let price: Int
-    let version: String
-    let userRatingCount: Int
-
-    enum CodingKeys: String, CodingKey {
-        case screenshotUrls, ipadScreenshotUrls, appletvScreenshotUrls, artworkUrl60, artworkUrl512, artworkUrl100
-        case artistViewURL = "artistViewUrl"
-        case isGameCenterEnabled, advisories, supportedDevices, features, kind, averageUserRating, formattedPrice
-        case minimumOSVersion = "minimumOsVersion"
-        case trackCensoredName, languageCodesISO2A, fileSizeBytes, contentAdvisoryRating, averageUserRatingForCurrentVersion, userRatingCountForCurrentVersion
-        case trackViewURL = "trackViewUrl"
-        case trackContentRating, currentVersionReleaseDate, releaseNotes
-        case resultDescription = "description"
-        case genreIDS = "genreIds"
-        case releaseDate, primaryGenreName
-        case primaryGenreID = "primaryGenreId"
-        case bundleID = "bundleId"
-        case trackID = "trackId"
-        case trackName, sellerName, currency, isVppDeviceBasedLicensingEnabled
-        case artistID = "artistId"
-        case artistName, genres, price, version, wrapperType, userRatingCount
+    let results: [DetailResponseItemDTO]
+    
+    func toDomain() throws -> DetailInfoEntity {
+        guard let detailInfo = results.first else { throw ITunesAPIError.strangeResult }
+        let headerInfo = AppHeaderEntity(appName: detailInfo.trackName, appIconImagePath: detailInfo.artworkUrl512, appId: detailInfo.trackId)
+        let ratingEntity = AppRatingEntity(ratingScore: detailInfo.averageUserRating, userRatingCount: detailInfo.userRatingCount)
+        let subInfo = AppSubInfoEntity(appThumbnailImagePath: detailInfo.screenshotUrls, genre: detailInfo.primaryGenreName, developerName: detailInfo.artistName)
+        guard let releaseDate = detailInfo.currentVersionReleaseDate.toDate() else { fatalError("cannot convert string to date") }
+        let releaseEntity = AppReleaseEntity(releaseDate: releaseDate, releaseNote: detailInfo.releaseNotes, version: detailInfo.version)
+        let descriptionEntity = AppDescriptionEntity(description: detailInfo.description)
+        return .init(headerInfo: headerInfo, ratingInfo: ratingEntity, subInfo: subInfo, releaseInfo: releaseEntity, descriptionInfo: descriptionEntity)
     }
+}
+
+struct DetailResponseItemDTO: Decodable {
+    let screenshotUrls: [String]
+    let trackName: String // 이름
+    let primaryGenreName: String
+    let trackContentRating: String // 연령제한
+    let description: String // 설명
+    let price: Double // 가격
+    let sellerName: String // 개발자 이름
+    let formattedPrice: String // 가격(무료/유료)
+    let userRatingCount: Int // 평가자 수
+    let averageUserRating: Double // 평균 평점
+    let artworkUrl512: String // 아이콘 이미지
+    let languageCodesISO2A: [String] // 언어 지원
+    let trackId: Int
+    let version: String
+    let releaseNotes: String
+    let artistName: String
+    let currentVersionReleaseDate: String
 }
