@@ -70,7 +70,8 @@ class SearchViewController: UIViewController {
         
         searchView.searchResultCollectionView.rx.itemSelected
             .subscribe(with: self, onNext: { owner, indexPath in
-                print(owner.viewModel.searchResults[indexPath.row])
+                let selectApp = owner.viewModel.searchResults[indexPath.row]
+                owner.navigationController?.pushViewController(owner.diContainer.makeDetailViewController(selectedThumbnail: selectApp), animated: true)
             })
             .disposed(by: disposeBag)
         
