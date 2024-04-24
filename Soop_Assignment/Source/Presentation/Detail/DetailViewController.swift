@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     private let viewModel: DetailViewModel
     private let detailView = DetailView(frame: .zero)
     private let disposeBag = DisposeBag()
+    private let screenShotDatasource: ScreenshotCollectionViewDatasource = .init()
     
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
@@ -30,12 +31,14 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailView.setConstraints()
+        bind()
+        detailView.screenshotCollectionView.dataSource = screenShotDatasource
         navigationItem.largeTitleDisplayMode = .never
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        bind()
     }
     
     private func bind() {
@@ -56,6 +59,8 @@ class DetailViewController: UIViewController {
                 switch result {
                 case .success(let fetchData):
                     owner.detailView.configureDetailInfo(detailInfo: fetchData)
+                    owner.screenShotDatasource.imagePath = fetchData.appThumbnailImagePath
+                    owner.detailView.screenshotCollectionView.reloadData()
                 case .failure(let error):
                     owner.errorAlert(error: error)
                 }
