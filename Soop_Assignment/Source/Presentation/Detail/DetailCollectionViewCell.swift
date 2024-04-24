@@ -39,6 +39,10 @@ class DetailCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        imageView.image = nil
+    }
+    
     func configureCell(imagePath: String) {
         imageView.setImageFromImagePath(imagePath: imagePath)
     }
