@@ -48,8 +48,10 @@ class SearchView: UIView {
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
+        let width = (bounds.width - 20)/3
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: bounds.width-2*(Metric.collectionViewInset), height: 300)
+        layout.itemSize = .init(width: bounds.width-2*(Metric.collectionViewInset), height: width*1.8+85)
+        layout.minimumInteritemSpacing = 20.0
         return layout
     }
 }
