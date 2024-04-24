@@ -52,6 +52,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     private let appLogoImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .green
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
@@ -175,6 +176,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     func configureCell(_ model: SearchThumbnailModel) {
         appNameLabel.text = model.appName
+        appLogoImageView.setImageFromImagePath(imagePath: model.appIconImagePath)
         appGenreLabel.text = model.genre
         ratingStarView.ratingScore = model.ratingScore
         ratingCountLabel.text = countCutting(model.userRatingCount)
@@ -197,7 +199,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private func configureThumbnailImageView() {
         for _ in 0..<3 {
             let imageView = UIImageView()
-            imageView.backgroundColor = .orange
+            imageView.backgroundColor = .systemGray3
             appThumbnailStackView.addArrangedSubview(imageView)
             appThumbnailImageViewList.append(imageView)
             setThumbnailImageViewConstraints(imageView)
@@ -214,6 +216,9 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         for i in 0..<3-imageArr.count {
             appThumbnailImageViewList[2-i].isHidden = true
         }
+        for i in 0..<imageArr.count {
+            appThumbnailImageViewList[i].setImageFromImagePath(imagePath: imageArr[i])
+        }
     }
     
     private func setThumbnailImageViewConstraints(_ imageView: UIImageView) {
@@ -228,5 +233,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         appThumbnailImageViewList.forEach { $0.isHidden = false }
+        appLogoImageView.image = nil
     }
 }
