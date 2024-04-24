@@ -21,10 +21,10 @@ extension UIImageView {
         let request = URLRequest(url: url)
         session.dataTask(with: request) { data, response, error in
             let fetchImage: UIImage?
-            if let error = error {
+            if error != nil {
                 fetchImage = UIImage(systemName: "xmark")
             } else {
-                guard let data, let response, let safeImage = UIImage(data: data) else { return }
+                guard let data, let safeImage = UIImage(data: data) else { return }
                 fetchImage = UIImage(data: data)
                 DispatchQueue.main.async {
                     ImageCacheManager.shared.cache.setObject(safeImage, forKey: imagePath as NSString)
