@@ -12,6 +12,7 @@ final class DetailView: UIView {
     enum Metric {
         static let appNameLabelFontSize: CGFloat = 20
         static let defaultPadding: CGFloat = 20
+        static let screenShotWidthMulti: CGFloat = 0.7
     }
 
     private lazy var scrollView: UIScrollView = {
@@ -26,6 +27,8 @@ final class DetailView: UIView {
         stackView.spacing = 10
         stackView.addArrangedSubview(headerStackView)
         stackView.addArrangedSubview(middleStackView)
+        stackView.addArrangedSubview(screenshotCollectionView)
+        stackView.addArrangedSubview(descriptionView)
         stackView.alignment = .center
         return stackView
     }()
@@ -127,15 +130,23 @@ final class DetailView: UIView {
     
     private let screenshotCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
-        
+        collectionView.backgroundColor = .red
         return collectionView
     }()
+    
+    private let descriptionView: FoldingTextView = {
+        let textView = FoldingTextView()
+        return textView
+    }()
+    
+    //MARK: - footer
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         configureView()
-        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -150,13 +161,14 @@ final class DetailView: UIView {
         ageSubInfoView.middleText = detailInfo.age
         languageInfoView.middleText = detailInfo.languageList.first ?? "KO"
         languageInfoView.footerText = "+ \(detailInfo.languageList.count)개의 언어"
+        descriptionView.insertText(detailInfo.description)
     }
     
     private func configureView() {
         addSubview(scrollView)
     }
     
-    private func setConstraints() {
+    func setConstraints() {
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
@@ -175,6 +187,12 @@ final class DetailView: UIView {
         middleStackView.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(Metric.defaultPadding)
         }
-        ratingStackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        screenshotCollectionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(contentStackView.snp.width).multipliedBy(0.8*1.7)
+        }
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview().inset(Metric.defaultPadding)
+        }
     }
 }
