@@ -59,7 +59,7 @@ final class DetailView: UIView {
     
     private let appLogoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .green
+        imageView.backgroundColor = .lightGray
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         return imageView
@@ -128,9 +128,13 @@ final class DetailView: UIView {
         return view
     }()
     
-    private let screenshotCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
-        collectionView.backgroundColor = .red
+    lazy var screenshotCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
+        collectionView.contentInset = .init(top: 0, left: Metric.defaultPadding, bottom: 0, right: Metric.defaultPadding)
+        collectionView.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: DetailCollectionViewCell.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.alwaysBounceVertical = false
         return collectionView
     }()
     
@@ -138,10 +142,6 @@ final class DetailView: UIView {
         let textView = FoldingTextView()
         return textView
     }()
-    
-    //MARK: - footer
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -155,6 +155,7 @@ final class DetailView: UIView {
     
     func configureDetailInfo(detailInfo: DetailInfoModel) {
         appNameLabel.text = detailInfo.appName
+        appLogoImageView.setImageFromImagePath(imagePath: detailInfo.appIconImagePath)
         appGenreLabel.text = detailInfo.genre
         ratingStarView.ratingScore = detailInfo.ratingScore
         ratingInfoLabel.text = String(format: "%.1f, ", detailInfo.ratingScore) + detailInfo.userRatingCount.countCutting() + "개의 평가"
@@ -194,5 +195,20 @@ final class DetailView: UIView {
         descriptionView.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(Metric.defaultPadding)
         }
+    }
+    
+    private func makeCollectionViewLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { _, _ in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.6), heightDimension: .fractionalHeight(1.0))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = 10.0
+            section.orthogonalScrollingBehavior = .groupPaging
+            return section
+        }
+        return layout
     }
 }
