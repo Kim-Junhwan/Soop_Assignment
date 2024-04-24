@@ -62,6 +62,7 @@
 		C744E9D82BD4DD9300DB6A2A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */; };
 		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
 		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
+		C7E553AA2BD91F5300E3B1E2 /* FoldingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		C744E9D72BD4DD9300DB6A2A /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
 		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
+		C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				C722733B2BD8488100B0DBF9 /* DetailViewController.swift */,
 				C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */,
 				C73B9CC72BD8FA1600D2E2C2 /* SubInfoView.swift */,
+				C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				C72273242BD8172900B0DBF9 /* FetchDetailInfoRequestDTO.swift in Sources */,
 				C72273222BD80CB300B0DBF9 /* HTTPMethod.swift in Sources */,
 				C72273192BD808E000B0DBF9 /* Rule.swift in Sources */,
+				C7E553AA2BD91F5300E3B1E2 /* FoldingTextView.swift in Sources */,
 				C72273422BD8488100B0DBF9 /* SearchView.swift in Sources */,
 				C744E9C62BD41D4600DB6A2A /* SearchQuery.swift in Sources */,
 				C72273272BD8192200B0DBF9 /* SearchResponseDTO.swift in Sources */,
