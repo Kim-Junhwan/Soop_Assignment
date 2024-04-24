@@ -20,6 +20,7 @@ final class SearchViewModel: ViewModelBase {
         let searchResult: Signal<[SearchThumbnailModel]>
         let isLoading: Signal<Bool>
         let currentError: Signal<Error>
+        let searchResultIsEmpty: Signal<String>
     }
     
     private let searchUsecase: SearchUsecase
@@ -28,6 +29,7 @@ final class SearchViewModel: ViewModelBase {
     private let currentError: PublishRelay<Error> = .init()
     private let isLoadingNextPage: BehaviorRelay<Bool> = .init(value: false)
     private let hasNextPage: BehaviorRelay<Bool> = .init(value: false)
+    private var searchResultIsEmpty: PublishRelay<String> = .init()
     var currentSearchWord: String = ""
     var disposeBag: DisposeBag = .init()
     
@@ -36,6 +38,9 @@ final class SearchViewModel: ViewModelBase {
     }
     
     func transform(input: Input) -> Output {
+        let resetEvent = input.search
+            .map { _ in [SearchThumbnailModel]() }
+            .asSignal()
         let searchButtonClick = input.search
             .do(onNext: { [weak self] word in
                 self?.isLoading.accept(true)
@@ -52,9 +57,13 @@ final class SearchViewModel: ViewModelBase {
                 result.map { SearchThumbnailModel(thumbnailEntity: $0) }
             }
             .do(onNext: { [weak self] result in
-                self?.hasNextPage.accept(result.count >= Rule.fetchCount)
-                self?.isLoading.accept(false)
-                self?.searchResults = result
+                guard let self else { return }
+                self.hasNextPage.accept(result.count >= Rule.fetchCount)
+                self.isLoading.accept(false)
+                if result.isEmpty {
+                    self.searchResultIsEmpty.accept(self.currentSearchWord)
+                }
+                self.searchResults = result
             })
         
         let loadMore = input.loadNextPage
@@ -82,8 +91,8 @@ final class SearchViewModel: ViewModelBase {
                 self.searchResults = loadResult
             }
         
-        let searchResult = Signal<[SearchThumbnailModel]>.merge(searchButtonClick.asSignal(), loadMore)
+        let searchResult = Signal<[SearchThumbnailModel]>.merge(searchButtonClick.asSignal(), loadMore, resetEvent)
         
-        return .init(searchResult: searchResult, isLoading: isLoading.asSignal(), currentError: currentError.asSignal())
+        return .init(searchResult: searchResult, isLoading: isLoading.asSignal(), currentError: currentError.asSignal(), searchResultIsEmpty: searchResultIsEmpty.asSignal())
     }
 }

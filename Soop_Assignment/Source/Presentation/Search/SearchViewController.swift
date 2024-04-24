@@ -79,10 +79,7 @@ class SearchViewController: UIViewController {
         let output = viewModel.transform(input: input)
         output.searchResult.asObservable()
             .do(onNext: { result in
-                if result.isEmpty {
-                    self.emptyView.searchWord = self.viewModel.currentSearchWord
-                    self.view = self.emptyView
-                } else {
+                if !result.isEmpty {
                     self.view = self.searchView
                 }
             })
@@ -90,6 +87,10 @@ class SearchViewController: UIViewController {
             cell.configureCell(element)
         }
         .disposed(by: disposeBag)
+        output.searchResultIsEmpty.emit(with: self) { owner, word in
+            owner.emptyView.searchWord = word
+            owner.view = owner.emptyView
+        }.disposed(by: disposeBag)
         
         output.isLoading.emit(with: self) { owner, isLoading in
             if isLoading {
