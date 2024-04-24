@@ -18,9 +18,9 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .center
-        stackView.spacing = 15
+        stackView.spacing = 10
         stackView.addArrangedSubview(headerStackView)
         stackView.addArrangedSubview(middleStackView)
         stackView.addArrangedSubview(appThumbnailStackView)
@@ -74,8 +74,9 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private lazy var middleStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.alignment = .center
+        stackView.alignment = .leading
         stackView.distribution = .equalSpacing
+        stackView.spacing = 10.0
         stackView.addArrangedSubview(ratingStackView)
         stackView.addArrangedSubview(developerStackView)
         return stackView
@@ -168,6 +169,8 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         developerImageView.snp.makeConstraints { make in
             make.width.height.equalTo(15)
         }
+        developerStackView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        developerNameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     func configureCell(_ model: SearchThumbnailModel) {
@@ -215,8 +218,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     private func setThumbnailImageViewConstraints(_ imageView: UIImageView) {
         let width = (bounds.width - 2*Metric.appThumbnailStackViewSpacing)/3
+        imageView.layer.cornerRadius = 20.0
+        imageView.clipsToBounds = true
         imageView.snp.makeConstraints { make in
             make.width.equalTo(width)
+            make.height.equalTo(width * 1.8)
         }
     }
     
