@@ -25,11 +25,11 @@ final class SearchViewModel: ViewModelBase {
     
     private let searchUsecase: SearchUsecase
     private let isLoading: PublishRelay<Bool> = .init()
-    private var searchResults: [SearchThumbnailModel] = []
+    var searchResults: [SearchThumbnailModel] = []
     private let currentError: PublishRelay<Error> = .init()
     private let isLoadingNextPage: BehaviorRelay<Bool> = .init(value: false)
     private let hasNextPage: BehaviorRelay<Bool> = .init(value: false)
-    private var currentSearchWord: String = ""
+    var currentSearchWord: String = ""
     var disposeBag: DisposeBag = .init()
     
     init(searchUsecase: SearchUsecase) {
