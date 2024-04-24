@@ -9,10 +9,17 @@ import UIKit
 
 class SubInfoView: UIView {
     
+    enum Metric
+    {
+        static let middleTextFontSize = 20.0
+        static let defaultTextFontSize = 10.0
+    }
+    
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
         stackView.axis = .vertical
+        stackView.spacing = 5
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(middleLabel)
         stackView.addArrangedSubview(footerLabel)
@@ -22,19 +29,21 @@ class SubInfoView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
+        label.font = .systemFont(ofSize: Metric.defaultTextFontSize)
         return label
     }()
     
     private let middleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: Metric.middleTextFontSize)
         return label
     }()
     
     private let footerLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
+        label.font = .systemFont(ofSize: Metric.defaultTextFontSize)
         return label
     }()
     
