@@ -15,4 +15,9 @@ final class SceneDIContainer {
         let searchViewController = SearchViewController(viewModel: SearchViewModel(searchUsecase: domainDIContainer.searchUsecase), diContainer: self)
         return searchViewController
     }
+    
+    func makeDetailViewController(selectedThumbnail: SearchThumbnailModel) -> DetailViewController {
+        let detailViewController = DetailViewController(viewModel: DetailViewModel(appThumbnailModel: selectedThumbnail, fetchDetailInfoUsecase: domainDIContainer.fetchDetailInfoUsecase))
+        return detailViewController
+    }
 }
