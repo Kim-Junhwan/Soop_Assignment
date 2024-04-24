@@ -63,6 +63,8 @@
 		C744E9DA2BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */; };
 		C744E9E02BD4F92C00DB6A2A /* URLRequestConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */; };
 		C7E553AA2BD91F5300E3B1E2 /* FoldingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */; };
+		C7E553AC2BD92B5A00E3B1E2 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E553AB2BD92B5A00E3B1E2 /* DetailCollectionViewCell.swift */; };
+		C7E553AE2BD9317A00E3B1E2 /* ScreenshotCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E553AD2BD9317A00E3B1E2 /* ScreenshotCollectionViewDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		C744E9D92BD4E07900DB6A2A /* FetchDetailInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailInfoUsecase.swift; sourceTree = "<group>"; };
 		C744E9DF2BD4F92C00DB6A2A /* URLRequestConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertable.swift; sourceTree = "<group>"; };
 		C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingTextView.swift; sourceTree = "<group>"; };
+		C7E553AB2BD92B5A00E3B1E2 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7E553AD2BD9317A00E3B1E2 /* ScreenshotCollectionViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCollectionViewDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 				C722733C2BD8488100B0DBF9 /* DetailViewModel.swift */,
 				C73B9CC72BD8FA1600D2E2C2 /* SubInfoView.swift */,
 				C7E553A92BD91F5300E3B1E2 /* FoldingTextView.swift */,
+				C7E553AB2BD92B5A00E3B1E2 /* DetailCollectionViewCell.swift */,
+				C7E553AD2BD9317A00E3B1E2 /* ScreenshotCollectionViewDatasource.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				C73B9CC82BD8FA1600D2E2C2 /* SubInfoView.swift in Sources */,
 				C744E98E2BD3ECA400DB6A2A /* SceneDelegate.swift in Sources */,
 				C722733F2BD8488100B0DBF9 /* RatingStarView.swift in Sources */,
+				C7E553AC2BD92B5A00E3B1E2 /* DetailCollectionViewCell.swift in Sources */,
 				C72273622BD8DE1900B0DBF9 /* DetailInfoModel.swift in Sources */,
 				C722732F2BD83C5700B0DBF9 /* ITunesAPIError.swift in Sources */,
 				C722734F2BD8518000B0DBF9 /* DomainDIContainer.swift in Sources */,
@@ -525,6 +532,7 @@
 				C72273602BD8D3CF00B0DBF9 /* ViewController+.swift in Sources */,
 				C744E9C82BD4254400DB6A2A /* FetchDetailInfoQuery.swift in Sources */,
 				C72273472BD8488100B0DBF9 /* DetailViewModel.swift in Sources */,
+				C7E553AE2BD9317A00E3B1E2 /* ScreenshotCollectionViewDatasource.swift in Sources */,
 				C72273292BD8269500B0DBF9 /* DetailResponseDTO.swift in Sources */,
 				C72273102BD801BE00B0DBF9 /* DataTransferService.swift in Sources */,
 				C72273462BD8488100B0DBF9 /* DetailViewController.swift in Sources */,
