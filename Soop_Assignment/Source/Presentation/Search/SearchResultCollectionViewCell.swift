@@ -53,7 +53,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     private let appLogoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .green
+        imageView.backgroundColor = .lightGray
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         return imageView
@@ -222,7 +222,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        appThumbnailImageViewList.forEach { $0.isHidden = false }
+        appThumbnailImageViewList.forEach { item in
+            item.isHidden = false
+            item.image = nil
+        }
         appLogoImageView.image = nil
+        
     }
 }
