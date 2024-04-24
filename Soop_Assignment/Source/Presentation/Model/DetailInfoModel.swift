@@ -19,6 +19,7 @@ struct DetailInfoModel {
     let description: String
     let version: String
     let age: String
+    let languageList: [String]
     
     init(detailEntity: DetailInfoEntity) {
         self.appName = detailEntity.headerInfo.appName
@@ -32,5 +33,6 @@ struct DetailInfoModel {
         self.description = detailEntity.descriptionInfo.description
         self.version = detailEntity.releaseInfo.version
         self.age = detailEntity.age
+        self.languageList = detailEntity.languageList
     }
 }
