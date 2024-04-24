@@ -23,6 +23,7 @@ final class DetailView: UIView {
     private lazy var contentStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 10
         stackView.addArrangedSubview(headerStackView)
         stackView.addArrangedSubview(middleStackView)
         stackView.alignment = .center
@@ -34,7 +35,6 @@ final class DetailView: UIView {
     private lazy var headerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.backgroundColor = .red
         stackView.spacing = 10
         stackView.alignment = .top
         stackView.distribution = .fill
@@ -72,7 +72,6 @@ final class DetailView: UIView {
     private let appGenreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
-        label.text = "액션"
          return label
     }()
     
@@ -81,10 +80,12 @@ final class DetailView: UIView {
     private lazy var middleStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
+        stackView.spacing = 10
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(ratingStackView)
         stackView.addArrangedSubview(ageSubInfoView)
+        stackView.addArrangedSubview(languageInfoView)
         return stackView
     }()
     
@@ -92,6 +93,8 @@ final class DetailView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
+        stackView.alignment = .center
+        stackView.distribution = .fill
         stackView.addArrangedSubview(ratingStarView)
         stackView.addArrangedSubview(ratingInfoLabel)
         return stackView
@@ -116,6 +119,12 @@ final class DetailView: UIView {
         return view
     }()
     
+    private let languageInfoView: SubInfoView = {
+        let view = SubInfoView()
+        view.title = "언어"
+        return view
+    }()
+    
     private let screenshotCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
         
@@ -135,9 +144,12 @@ final class DetailView: UIView {
     
     func configureDetailInfo(detailInfo: DetailInfoModel) {
         appNameLabel.text = detailInfo.appName
+        appGenreLabel.text = detailInfo.genre
         ratingStarView.ratingScore = detailInfo.ratingScore
         ratingInfoLabel.text = String(format: "%.1f, ", detailInfo.ratingScore) + detailInfo.userRatingCount.countCutting() + "개의 평가"
         ageSubInfoView.middleText = detailInfo.age
+        languageInfoView.middleText = detailInfo.languageList.first ?? "KO"
+        languageInfoView.footerText = "+ \(detailInfo.languageList.count)개의 언어"
     }
     
     private func configureView() {
@@ -150,7 +162,8 @@ final class DetailView: UIView {
             make.leading.trailing.bottom.equalToSuperview()
         }
         contentStackView.snp.makeConstraints { make in
-            make.width.equalTo(scrollView.snp.width)
+            make.leading.trailing.equalToSuperview()
+            make.width.equalToSuperview()
             make.top.bottom.equalToSuperview()
         }
         appLogoImageView.snp.makeConstraints { make in
@@ -159,5 +172,9 @@ final class DetailView: UIView {
         headerStackView.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(Metric.defaultPadding)
         }
+        middleStackView.snp.makeConstraints { make in
+            make.width.equalToSuperview().inset(Metric.defaultPadding)
+        }
+        ratingStackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
 }
