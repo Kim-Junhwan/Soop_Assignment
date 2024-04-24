@@ -66,7 +66,7 @@ class SearchViewController: UIViewController {
             }
             .map{ _ in () }
             .asSignal(onErrorSignalWith: .empty())
-        let input = SearchViewModel.Input(search: searchSignal, loadNextPage: loadMore, tapCancelButton: searchController.searchBar.rx.cancelButtonClicked)
+        let input = SearchViewModel.Input(search: searchSignal, loadNextPage: loadMore)
         
         searchView.searchResultCollectionView.rx.itemSelected
             .subscribe(with: self, onNext: { owner, indexPath in

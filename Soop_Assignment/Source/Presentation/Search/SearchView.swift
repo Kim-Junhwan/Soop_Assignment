@@ -41,8 +41,7 @@ class SearchView: UIView {
     
     private func setConstraints() {
         searchResultCollectionView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide)
+            make.top.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }

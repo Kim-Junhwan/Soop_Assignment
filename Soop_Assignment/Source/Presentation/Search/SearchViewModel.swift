@@ -14,7 +14,6 @@ final class SearchViewModel: ViewModelBase {
     struct Input {
         let search: Signal<String>
         let loadNextPage: Signal<Void>
-        let tapCancelButton: ControlEvent<Void>
     }
     
     struct Output {
@@ -57,10 +56,6 @@ final class SearchViewModel: ViewModelBase {
                 self?.isLoading.accept(false)
                 self?.searchResults = result
             })
-        let tapCancelButton = input.tapCancelButton
-            .map { ()-> [SearchThumbnailModel] in
-                return []
-            }
         
         let loadMore = input.loadNextPage
             .withLatestFrom(Observable.combineLatest(isLoadingNextPage, hasNextPage).asSignal(onErrorJustReturn: (false, false)))
@@ -87,7 +82,7 @@ final class SearchViewModel: ViewModelBase {
                 self.searchResults = loadResult
             }
         
-        let searchResult = Signal<[SearchThumbnailModel]>.merge(searchButtonClick.asSignal(), tapCancelButton.asSignal(onErrorJustReturn: []), loadMore)
+        let searchResult = Signal<[SearchThumbnailModel]>.merge(searchButtonClick.asSignal(), loadMore)
         
         return .init(searchResult: searchResult, isLoading: isLoading.asSignal(), currentError: currentError.asSignal())
     }
