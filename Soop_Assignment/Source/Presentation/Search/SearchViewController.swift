@@ -54,14 +54,22 @@ class SearchViewController: UIViewController {
         let searchSignal = searchController.searchBar.rx.searchButtonClicked
             .withLatestFrom(searchController.searchBar.rx.text.orEmpty)
             .asSignal(onErrorJustReturn: "")
+        let loadMore = searchView.searchResultCollectionView.rx.contentOffset
+            .filter { contentOffset in
+                let scrollView = self.searchView.searchResultCollectionView
+                let currentOffset = contentOffset.y + scrollView.frame.height - scrollView.safeAreaInsets.bottom
+                let contentSizeHeight = max(scrollView.contentSize.height, scrollView.frame.height)
+                return currentOffset >= contentSizeHeight-80
+            }
+            .map{ _ in () }
+            .asSignal(onErrorSignalWith: .empty())
+        let input = SearchViewModel.Input(search: searchSignal, loadNextPage: loadMore, tapCancelButton: searchController.searchBar.rx.cancelButtonClicked)
         
-        let input = SearchViewModel.Input(search: searchSignal)
         let output = viewModel.transform(input: input)
         output.searchResult.asObservable().bind(to: searchView.searchResultCollectionView.rx.items(cellIdentifier: SearchResultCollectionViewCell.identifier, cellType: SearchResultCollectionViewCell.self)) { index, element, cell in
             cell.configureCell(element)
         }
         .disposed(by: disposeBag)
-        
         output.isLoading.emit(with: self) { owner, isLoading in
             if isLoading {
                 LoadingView.show()
@@ -70,5 +78,11 @@ class SearchViewController: UIViewController {
             }
         }
         .disposed(by: disposeBag)
+        
+        output.currentError
+            .emit(with: self) { owner, error in
+                print(error)
+            }
+            .disposed(by: disposeBag)
     }
 }
