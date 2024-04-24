@@ -15,14 +15,16 @@ class SearchViewController: UIViewController {
         static let navigationTitle = "검색"
     }
     
+    private let diContainer: SceneDIContainer
     private let searchController: UISearchController = .init()
     private let searchView: SearchView = .init(frame: .zero)
     private let emptyView: EmptyView = .init(frame: .zero)
     private let viewModel: SearchViewModel
     private let disposeBag: DisposeBag = .init()
     
-    init(viewModel: SearchViewModel) {
+    init(viewModel: SearchViewModel, diContainer: SceneDIContainer) {
         self.viewModel = viewModel
+        self.diContainer = diContainer
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -65,6 +67,12 @@ class SearchViewController: UIViewController {
             .map{ _ in () }
             .asSignal(onErrorSignalWith: .empty())
         let input = SearchViewModel.Input(search: searchSignal, loadNextPage: loadMore, tapCancelButton: searchController.searchBar.rx.cancelButtonClicked)
+        
+        searchView.searchResultCollectionView.rx.itemSelected
+            .subscribe(with: self, onNext: { owner, indexPath in
+                print(owner.viewModel.searchResults[indexPath.row])
+            })
+            .disposed(by: disposeBag)
         
         let output = viewModel.transform(input: input)
         output.searchResult.asObservable()

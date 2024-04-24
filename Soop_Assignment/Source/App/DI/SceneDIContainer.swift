@@ -12,7 +12,7 @@ final class SceneDIContainer {
     private let domainDIContainer = DomainDIContainer()
     
     func makeSearchViewController() -> SearchViewController {
-        let searchViewController = SearchViewController(viewModel: SearchViewModel(searchUsecase: domainDIContainer.searchUsecase))
+        let searchViewController = SearchViewController(viewModel: SearchViewModel(searchUsecase: domainDIContainer.searchUsecase), diContainer: self)
         return searchViewController
     }
 }
