@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class DetailViewController: UIViewController {
     
     private let viewModel: DetailViewModel
     private let detailView = DetailView(frame: .zero)
+    private let disposeBag = DisposeBag()
     
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
@@ -30,15 +33,34 @@ class DetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bind()
     }
-    */
+    
+    private func bind() {
+        let viewDidLoadDriver = Driver<Void>.just(Void())
+        let input = DetailViewModel.Input(viewDidLoad: viewDidLoadDriver)
+        let output = viewModel.transform(input: input)
+        output.isLoading.emit(with: self) { owner, isLoading in
+            if isLoading {
+                LoadingView.show()
+            } else {
+                LoadingView.hide()
+            }
+        }
+        .disposed(by: disposeBag)
+        
+        output.detailInfo
+            .drive(with: self) { owner, result in
+                switch result {
+                case .success(let fetchData):
+                    owner.detailView.configureDetailInfo(detailInfo: fetchData)
+                case .failure(let error):
+                    owner.errorAlert(error: error)
+                }
+            }
+            .disposed(by: disposeBag)
+    }
 
 }
