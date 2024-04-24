@@ -60,9 +60,10 @@ class SearchViewController: UIViewController {
         let loadMore = searchView.searchResultCollectionView.rx.contentOffset
             .filter { contentOffset in
                 let scrollView = self.searchView.searchResultCollectionView
+                guard let navigationBarHeight = self.navigationController?.navigationBar.frame.height else { fatalError() }
                 let currentOffset = contentOffset.y + scrollView.frame.height - scrollView.safeAreaInsets.bottom
                 let contentSizeHeight = max(scrollView.contentSize.height, scrollView.frame.height)
-                return currentOffset >= contentSizeHeight-80
+                return currentOffset >= contentSizeHeight-(80 + navigationBarHeight)
             }
             .map{ _ in () }
             .asSignal(onErrorSignalWith: .empty())
