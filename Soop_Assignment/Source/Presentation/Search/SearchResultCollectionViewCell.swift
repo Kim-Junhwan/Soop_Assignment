@@ -179,22 +179,12 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         appLogoImageView.setImageFromImagePath(imagePath: model.appIconImagePath)
         appGenreLabel.text = model.genre
         ratingStarView.ratingScore = model.ratingScore
-        ratingCountLabel.text = countCutting(model.userRatingCount)
+        ratingCountLabel.text = model.userRatingCount.countCutting()
         developerNameLabel.text = model.developerName
         setThumbnailImageView(imageList: model.appThumbnailImagePath)
     }
     
-    private func countCutting(_ count: Int) -> String {
-        if count<1000 {
-            return "\(count)"
-        } else if count<10000 {
-            let cuttingNum = Double(count)/1000
-            return String(format:"%.1f천", cuttingNum)
-        } else {
-            let cuttingNum = Double(count)/10000
-            return String(format:"%.1f만", cuttingNum)
-        }
-    }
+    
     
     private func configureThumbnailImageView() {
         for _ in 0..<3 {
