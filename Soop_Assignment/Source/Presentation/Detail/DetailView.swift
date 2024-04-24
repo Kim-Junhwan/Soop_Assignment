@@ -24,6 +24,7 @@ final class DetailView: UIView {
        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.addArrangedSubview(headerStackView)
+        stackView.addArrangedSubview(middleStackView)
         stackView.alignment = .center
         return stackView
     }()
@@ -63,7 +64,6 @@ final class DetailView: UIView {
     
     private let appNameLabel: UILabel = {
        let label = UILabel()
-        label.text = "가나다라마바사아자차카타WEIAUHDISHDIUAHKSANJ123123"
         label.numberOfLines = 2
         label.font = .boldSystemFont(ofSize: Metric.appNameLabelFontSize)
         return label
@@ -78,6 +78,50 @@ final class DetailView: UIView {
     
     //MARK: - middle
     
+    private lazy var middleStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillProportionally
+        stackView.addArrangedSubview(ratingStackView)
+        stackView.addArrangedSubview(ageSubInfoView)
+        return stackView
+    }()
+    
+    private lazy var ratingStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.addArrangedSubview(ratingStarView)
+        stackView.addArrangedSubview(ratingInfoLabel)
+        return stackView
+    }()
+    
+    private let ratingStarView: RatingStarView = {
+        let starView = RatingStarView(size: 15, color: .gray)
+        return starView
+    }()
+    
+    private let ratingInfoLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = .gray
+        label.font = .boldSystemFont(ofSize: 13)
+        return label
+    }()
+    
+    private let ageSubInfoView: SubInfoView = {
+       let view = SubInfoView()
+        view.title = "연령"
+        view.footerText = "세"
+        return view
+    }()
+    
+    private let screenshotCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+        
+        return collectionView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemBackground
@@ -87,6 +131,13 @@ final class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureDetailInfo(detailInfo: DetailInfoModel) {
+        appNameLabel.text = detailInfo.appName
+        ratingStarView.ratingScore = detailInfo.ratingScore
+        ratingInfoLabel.text = String(format: "%.1f, ", detailInfo.ratingScore) + detailInfo.userRatingCount.countCutting() + "개의 평가"
+        ageSubInfoView.middleText = detailInfo.age
     }
     
     private func configureView() {
@@ -100,6 +151,7 @@ final class DetailView: UIView {
         }
         contentStackView.snp.makeConstraints { make in
             make.width.equalTo(scrollView.snp.width)
+            make.top.bottom.equalToSuperview()
         }
         appLogoImageView.snp.makeConstraints { make in
             make.width.height.equalTo(120)
