@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     
     private let searchController: UISearchController = .init()
     private let searchView: SearchView = .init(frame: .zero)
+    private let emptyView: EmptyView = .init(frame: .zero)
     private let viewModel: SearchViewModel
     private let disposeBag: DisposeBag = .init()
     
@@ -66,10 +67,20 @@ class SearchViewController: UIViewController {
         let input = SearchViewModel.Input(search: searchSignal, loadNextPage: loadMore, tapCancelButton: searchController.searchBar.rx.cancelButtonClicked)
         
         let output = viewModel.transform(input: input)
-        output.searchResult.asObservable().bind(to: searchView.searchResultCollectionView.rx.items(cellIdentifier: SearchResultCollectionViewCell.identifier, cellType: SearchResultCollectionViewCell.self)) { index, element, cell in
+        output.searchResult.asObservable()
+            .do(onNext: { result in
+                if result.isEmpty {
+                    self.emptyView.searchWord = self.viewModel.currentSearchWord
+                    self.view = self.emptyView
+                } else {
+                    self.view = self.searchView
+                }
+            })
+            .bind(to: searchView.searchResultCollectionView.rx.items(cellIdentifier: SearchResultCollectionViewCell.identifier, cellType: SearchResultCollectionViewCell.self)) { index, element, cell in
             cell.configureCell(element)
         }
         .disposed(by: disposeBag)
+        
         output.isLoading.emit(with: self) { owner, isLoading in
             if isLoading {
                 LoadingView.show()
