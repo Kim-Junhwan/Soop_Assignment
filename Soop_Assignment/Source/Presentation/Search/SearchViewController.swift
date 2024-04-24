@@ -92,7 +92,7 @@ class SearchViewController: UIViewController {
         
         output.currentError
             .emit(with: self) { owner, error in
-                print(error)
+                owner.errorAlert(error: error)
             }
             .disposed(by: disposeBag)
     }
