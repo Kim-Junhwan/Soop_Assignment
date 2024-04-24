@@ -11,4 +11,5 @@ struct DetailInfoEntity {
     let subInfo: AppSubInfoEntity
     let releaseInfo: AppReleaseEntity
     let descriptionInfo: AppDescriptionEntity
+    let age: String
 }

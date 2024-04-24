@@ -18,7 +18,7 @@ struct DetailResponseDTO: Decodable {
         guard let releaseDate = detailInfo.currentVersionReleaseDate.toDate() else { fatalError("cannot convert string to date") }
         let releaseEntity = AppReleaseEntity(releaseDate: releaseDate, releaseNote: detailInfo.releaseNotes, version: detailInfo.version)
         let descriptionEntity = AppDescriptionEntity(description: detailInfo.description)
-        return .init(headerInfo: headerInfo, ratingInfo: ratingEntity, subInfo: subInfo, releaseInfo: releaseEntity, descriptionInfo: descriptionEntity)
+        return .init(headerInfo: headerInfo, ratingInfo: ratingEntity, subInfo: subInfo, releaseInfo: releaseEntity, descriptionInfo: descriptionEntity, age: detailInfo.trackContentRating)
     }
 }
 
